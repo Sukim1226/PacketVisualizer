@@ -1,42 +1,26 @@
-from FileIO import IO
+from Protocol import Protocol
+import FileIO as IO
 
-class BLE(IO):
-    def __init__(self, filelist):
-        self.datas = self.load_json(filelist[0])
-        self.datas_csv = self.load_csv(filelist[1])
-        self.opcodes = self.load_json(filelist[2])
-        self.handles = self.load_json(filelist[3])
-        self.gatt = []
+class BLE(Protocol):
+    def __init__(self):
+        self.category = 'BLE'
+        self.protocol = 'nordic_ble:btle:btl2cap:btatt'
+        self.opcodes = None
+        self.handles = None
+        self.btatt = []
+        self.package = []
 
-    def filter(self):
-        for d in self.datas:
-            packet = d['_source']['layers']
-            if packet['frame']['frame.protocols'] == 'nordic_ble:btle:btl2cap:btatt':
-                c = self.get_csv(int(packet['frame']['frame.number']))
-                packet['csv'] = c
-                self.gatt.append(packet)
-
-    def get_csv(self, frame_num):
-        dic = {}
-        dic['src'] = self.datas_csv[frame_num - 1]['Source'].split('_')[0]
-        dic['arrival'] = self.datas_csv[frame_num - 1]['Time']
-        #dic['dst'] = self.datas_csv[frame_num - 1]['Destination']
-        dic['info'] = self.datas_csv[frame_num - 1]['Info']
-        return dic
+    def load_data(self, filelist):
+        super(BLE, self).load_data(filelist[0:2])
+        self.opcodes = IO.load_json(filelist[2])
+        self.handles = IO.load_json(filelist[3])
 
     def gather(self):
-        package = []
+        self.btatt = self.filter(self.protocol)
         idx = 1
-        for g in self.gatt:
-            package.append(self.pack(g, idx))
+        for g in self.btatt:
+            self.package.append(self.pack(g, idx))
             idx += 1
-        return package
-
-    def gen_color_key(self):
-        keys = []
-        for op in self.opcodes:
-            keys.append(op['message'])
-        return keys
 
     def pack(self, packet, idx):
         task = ('Phone' if packet['csv']['src'] == 'Master' else 'LED')
@@ -57,3 +41,9 @@ class BLE(IO):
         info = packet['csv']['info']
         description = 'Frame No. {}<br>Arrived at {}<br>Value: {}<br>Request in Frame {}<br>Info: {}'.format(num, time, value, req, info)
         return description
+    
+    def gen_color_keys(self):
+        color_keys = []
+        for op in self.opcodes:
+            color_keys.append(op['message'])
+        return color_keys
