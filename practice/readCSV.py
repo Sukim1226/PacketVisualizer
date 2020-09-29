@@ -43,11 +43,10 @@ df = pd.DataFrame(lis)
 
 
 fig = ff.create_gantt(df, colors=colors, index_col='Resource', show_colorbar=True,
-                      group_tasks=True)
+    title='Sniffer', height=1200, width=1200, group_tasks=True)
 
 
-fig.update_layout(title='Sniffer', xaxis_title='Device', yaxis_title='Time', legend_title='Type')
-fig.update_layout(autosize=False, width=1200, height=1200)
+fig.update_layout(xaxis_title='Device', yaxis_title='Time', legend_title='Type')
 
 fig['layout']['xaxis'].update({'type':None})
 

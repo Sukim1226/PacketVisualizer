@@ -1,0 +1,14 @@
+[
+    {   
+        "handle": "0x0000002d",
+        "command": "On/Off"
+    },
+    {
+        "handle": "0x0000002f",
+        "command": "Brightness"
+    },
+    {
+        "handle": "0x00000031",
+        "command": "Light Temperature"
+    }
+]

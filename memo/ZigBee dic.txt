@@ -1,0 +1,8 @@
+OnOff: On, Seq: 00
+OnOff: Off, Seq: 00
+Level Control: Move to Level with OnOff, Seq: 00
+Color Control: Move to Color Temperature, Seq:00
+Default Response, Seq: 00
+Report Attributes, Seq: 00
+Read Attributes, Seq: 00
+Read Attributes Response, Seq: 00

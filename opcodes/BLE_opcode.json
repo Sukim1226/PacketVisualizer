@@ -1,0 +1,119 @@
+[
+    {
+        "opcode": "0x00000001",
+        "message": "Error Response"
+    },
+    {
+        "opcode": "0x00000002",
+        "message": "Exchange MTU Request"
+    },
+    {
+        "opcode": "0x00000003",
+        "message": "Exchange MTU Response"
+    },
+    {
+        "opcode": "0x00000004",
+        "message": "Find Information Request"
+    }, 
+    {
+        "opcode": "0x00000005",
+        "message": "Find Information Response"
+    },
+    {
+        "opcode": "0x00000006",
+        "message": "Find By Type Value Request"
+    },
+    {
+        "opcode": "0x00000007",
+        "message": "Find By Type Value Response"
+    },
+    {
+        "opcode": "0x00000008",
+        "message": "Read By Type Request"
+    },
+    {
+        "opcode": "0x00000009",
+        "message": "Read By Type Response"
+    },
+    {
+        "opcode": "0x0000000a",
+        "message": "Read Request"
+    },
+    {
+        "opcode": "0x0000000b",
+        "message": "Read Response"
+    },
+    {
+        "opcode": "0x0000000c",
+        "message": "Read Blob Request"
+    },
+    {
+        "opcode": "0x0000000d",
+        "message": "Read Blob Response"
+    },
+    {
+        "opcode": "0x0000000e",
+        "message": "Read Multiple Request"
+    },
+    {
+        "opcode": "0x0000000f",
+        "message": "Read Multiple Response"
+    },
+    {
+        "opcode": "0x00000010",
+        "message": "Read By Group Type Request"
+    },
+    {
+        "opcode": "0x00000011",
+        "message": "Read By Group Type Response"
+    },
+    {
+        "opcode": "0x00000012",
+        "message": "Write Request"
+    },
+    {
+        "opcode": "0x00000013",
+        "message": "Write Response"
+    },
+    {
+        "opcode": "0x00000016",
+        "message": "Prepare Write Request"
+    },
+    {
+        "opcode": "0x00000017",
+        "message": "Prepare Write Response"
+    },
+    {
+        "opcode": "0x00000018",
+        "message": "Execute Write Request"
+    },
+    {
+        "opcode": "0x00000019",
+        "message": "Execute Write Response"
+    },
+    {
+        "opcode": "0x0000001b",
+        "message": "Handle Value Notification"
+    },
+    {
+        "opcode": "0x0000001d",
+        "message": "Handle Value Indication"
+    },
+    {
+        "opcode": "0x0000001e",
+        "message": "Handle Value Confirmation"
+    },
+    {
+        "opcode": "0x00000052",
+        "message": "Write Command"
+    },
+    {
+        "opcode": "0x000000d2",
+        "message": "Signed Write Command"
+    },
+    {
+        "opcode": "0x00000000",
+        "message": "NULL"
+    }
+]
+    
