@@ -1,8 +1,194 @@
 OnOff: On, Seq: 00
 OnOff: Off, Seq: 00
-Level Control: Move to Level with OnOff, Seq: 00
-Color Control: Move to Color Temperature, Seq:00
-Default Response, Seq: 00
-Report Attributes, Seq: 00
-Read Attributes, Seq: 00
-Read Attributes Response, Seq: 00
+--> wpan:zbee_nwk:zbee_aps:zbee_zcl:zbee_zcl_general.onoff
+"zbee_zcl": {
+            "zbee_zcl_general.onoff.cmd.srv_rx.id": "0x00000001", 
+            "Frame Control Field: Cluster-specific (0x01)": {
+                "zbee_zcl.type": "0x00000001", 
+                "zbee_zcl.ddr": "0", 
+                "zbee_zcl.ms": "0", 
+                "zbee_zcl.dir": "0"
+            }, 
+            "zbee_zcl.cmd.tsn": "69"
+        }, 
+        "csv": {
+            "arrival": "07:21:41.321959", 
+            "src": "0x0000", 
+            "info": "ZCL OnOff: On, Seq: 69"
+        }, 
+
+
+<Level Control: Move to Level with OnOff, Seq: 00>
+  --> wpan:zbee_nwk:zbee_aps:zbee_zcl:zbee_zcl_general.level_control
+"zbee_zcl": {
+          "Frame Control Field: Cluster-specific (0x01)": {
+            "zbee_zcl.type": "0x00000001",
+            "zbee_zcl.ms": "0",
+            "zbee_zcl.dir": "0",
+            "zbee_zcl.ddr": "0"
+          },
+          "zbee_zcl.cmd.tsn": "67",
+          "zbee_zcl_general.level_control.cmd.srv_rx.id": "0x00000004",
+          "Payload": {
+            "zbee_zcl_general.level_control.level": "64",
+            "zbee_zcl_general.level_control.transit_time": "65535"
+          }
+        }
+
+
+<Default Response, Seq: 00>
+  --> wpan:zbee_nwk:zbee_aps:zbee_zcl
+"zbee_zcl": {
+            "zbee_zcl.attr.status": "0", 
+            "zbee_zcl.cmd.id": "11", 
+            "zbee_zcl.cmd.id.rsp": "0x0000000a", 
+            "Frame Control Field: Profile-wide (0x00)": {
+                "zbee_zcl.type": "0x00000000", 
+                "zbee_zcl.ddr": "0", 
+                "zbee_zcl.ms": "0", 
+                "zbee_zcl.dir": "0"
+            }, 
+            "zbee_zcl.cmd.tsn": "1"
+        }, 
+        "csv": {
+            "arrival": "07:21:06.844971", 
+            "src": "0x0000", 
+            "info": "ZCL: Default Response, Seq: 1"
+        }, 
+
+<Report Attributes, Seq: 00>
+  --> wpan:zbee_nwk:zbee_aps:zbee_zcl
+"zbee_zcl": {
+            "zbee_zcl.cmd.id": "10", 
+            "Attribute Field": {
+                "zbee_zcl_general.onoff.attr_id": "0x00000000", 
+                "zbee_zcl.attr.data.type": "16", 
+                "zbee_zcl_general.onoff.attr.onoff": "0x00000000"
+            }, 
+            "Frame Control Field: Profile-wide (0x08)": {
+                "zbee_zcl.type": "0x00000000", 
+                "zbee_zcl.ddr": "0", 
+                "zbee_zcl.ms": "0", 
+                "zbee_zcl.dir": "1"
+            }, 
+            "zbee_zcl.cmd.tsn": "6"
+        }, 
+        "csv": {
+            "arrival": "07:22:02.723605", 
+            "src": "0xf919", 
+            "info": "ZCL: Report Attributes, Seq: 6"
+        }, 
+
+
+<Read Attributes, Seq: 00>
+"zbee_zcl": {
+            "zbee_zcl.cmd.id": "0", 
+            "zbee_zcl_general.basic.attr_id": "0x00000001", 
+            "Frame Control Field: Profile-wide (0x00)": {
+                "zbee_zcl.type": "0x00000000", 
+                "zbee_zcl.ddr": "0", 
+                "zbee_zcl.ms": "0", 
+                "zbee_zcl.dir": "0"
+            }, 
+            "zbee_zcl.cmd.tsn": "59"
+        }, 
+        "csv": {
+            "arrival": "07:20:58.172195", 
+            "src": "0x0000", 
+            "info": "ZCL: Read Attributes, Seq: 59"
+        }, 
+
+<Read Attributes Response, Seq: 00>
+"zbee_zcl": {
+            "Status Record, String: Samsung Electronics": {
+                "zbee_zcl.attr.status": "0", 
+                "zbee_zcl_general.basic.attr_id": "0x00000004", 
+                "zbee_zcl.attr.data.type": "66", 
+                "zbee_zcl.attr.str": "Samsung Electronics"
+            }, 
+            "zbee_zcl.cmd.id": "1", 
+            "Frame Control Field: Profile-wide (0x18)": {
+                "zbee_zcl.type": "0x00000000", 
+                "zbee_zcl.ddr": "1", 
+                "zbee_zcl.ms": "0", 
+                "zbee_zcl.dir": "1"
+            }, 
+            "zbee_zcl.cmd.tsn": "60"
+        }, 
+        "csv": {
+            "arrival": "07:20:58.302496", 
+            "src": "0xf919", 
+            "info": "ZCL: Read Attributes Response, Seq: 60"
+        }, 
+
+
+<Color Control: Move to Color Temperature, Seq:00>
+  --> wpan:zbee_nwk:zbee_aps:zbee_zcl:zbee_zcl_lighting.color_ctrl
+"zbee_zcl": {
+          "Frame Control Field: Cluster-specific (0x01)": {
+            "zbee_zcl.type": "0x00000001",
+            "zbee_zcl.ms": "0",
+            "zbee_zcl.dir": "0",
+            "zbee_zcl.ddr": "0"
+          },
+          "zbee_zcl.cmd.tsn": "73",
+          "zbee_zcl_lighting.color_control.cmd.srv_rx.id": "0x0000000a",
+          "Payload": {
+            "zbee_zcl_lighting.color_control.color_temp": "286",
+            "zbee_zcl_lighting.color_control.transit_time": "0"
+          }
+        }
+
+
+  --> wpan:zbee_nwk:zbee_aps:zbee_zcl:zbee_zcl_general.ota
+"zbee_zcl": {
+            "Payload": {
+                "zbee_zcl_general.ota.file.version": "0x11891539", 
+                "zbee_zcl_general.ota.query_next_image_req.field_ctrl_tree": {
+                    "zbee_zcl_general.ota.query_next_image_req.field_ctrl.hw_ver_present": "0", 
+                    "zbee_zcl_general.ota.query_next_image_req.field_ctrl.reserved": "0x00000000"
+                }, 
+                "zbee_zcl_general.ota.query_next_image_req.field_ctrl": "0x00000000", 
+                "zbee_zcl_general.ota.image.type": "12", 
+                "zbee_zcl_general.ota.file.version_tree": {
+                    "zbee_zcl_general.ota.file.version.appl.build": "137", 
+                    "zbee_zcl_general.ota.file.version.stack.build": "57", 
+                    "zbee_zcl_general.ota.file.version.appl.release": "17", 
+                    "zbee_zcl_general.ota.file.version.stack.release": "21"
+                }, 
+                "zbee_zcl_general.ota.manufacturer_code": "0x000010e1"
+            }, 
+            "Frame Control Field: Cluster-specific (0x01)": {
+                "zbee_zcl.type": "0x00000001", 
+                "zbee_zcl.ddr": "0", 
+                "zbee_zcl.ms": "0", 
+                "zbee_zcl.dir": "0"
+            }, 
+            "zbee_zcl_general.ota.cmd.srv_rx.id": "0x00000001", 
+            "zbee_zcl.cmd.tsn": "3"
+        }, 
+        "csv": {
+            "arrival": "07:21:14.060606", 
+            "src": "0xf919", 
+            "info": "ZCL OTA: Query Next Image Request, Seq: 3"
+        }, 
+
+  --> wpan:zbee_nwk:zbee_aps:zbee_zcl:zbee_zcl_general.ota
+"zbee_zcl": {
+            "Frame Control Field: Cluster-specific (0x19)": {
+                "zbee_zcl.type": "0x00000001", 
+                "zbee_zcl.ddr": "1", 
+                "zbee_zcl.ms": "0", 
+                "zbee_zcl.dir": "1"
+            }, 
+            "zbee_zcl_general.ota.cmd.srv_tx.id": "0x00000002", 
+            "Payload": {
+                "zbee_zcl_general.ota.status": "0x00000098"
+            }, 
+            "zbee_zcl.cmd.tsn": "3"
+        }, 
+        "csv": {
+            "arrival": "07:21:14.097816", 
+            "src": "0x0000", 
+            "info": "ZCL OTA: Query Next Image Response, Seq: 3"
+        }, 

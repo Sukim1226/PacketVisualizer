@@ -4,7 +4,7 @@ import FileIO as IO
 class BLE(Protocol):
     def __init__(self):
         self.category = 'BLE'
-        self.protocol = 'nordic_ble:btle:btl2cap:btatt'
+        self.protocol = ['nordic_ble:btle:btl2cap:btatt']
         self.opcodes = None
         self.handles = None
         self.btatt = []
@@ -18,8 +18,8 @@ class BLE(Protocol):
     def gather(self):
         self.btatt = self.filter(self.protocol)
         idx = 1
-        for g in self.btatt:
-            self.package.append(self.pack(g, idx))
+        for packet in self.btatt:
+            self.package.append(self.pack(packet, idx))
             idx += 1
 
     def pack(self, packet, idx):

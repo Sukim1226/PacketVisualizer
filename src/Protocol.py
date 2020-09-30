@@ -14,7 +14,7 @@ class Protocol(object):
         packets = []
         for j in self.json_datas:
             packet = j['_source']['layers']
-            if packet['frame']['frame.protocols'] == protocol:
+            if packet['frame']['frame.protocols'] in protocol:
                 c = self.get_csv(int(packet['frame']['frame.number']))
                 packet['csv'] = c
                 packets.append(packet)

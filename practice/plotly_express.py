@@ -33,7 +33,8 @@ df = pd.DataFrame([
 fig = ff.create_gantt(df, colors=None, index_col='Resource', show_colorbar=True, show_hover_fill=True, group_tasks=False)
 
 num = 1
-#for i in fig['data']:
-#    i.update(text='hi', hovertemplate="Price: %{Description}", hoverinfo="text")
-#    num += 1
+for i in fig['data']:
+    #i.update(text='hi', hovertemplate="Price: %{}".format('499'), hoverinfo="text")
+    i.update(hoverinfo="text+x+y")
+    num += 1
 fig.show()
