@@ -33,8 +33,8 @@ if __name__ == '__main__':
     gui.add(zb)
 
     # command: 'BLE', 'ZigBee', 'Wi-Fi', 'ALL'
-    #gui.show('ZigBee')
-    #gui.show('BLE')
+    gui.show('ZigBee')
+    gui.show('BLE')
     gui.show('ALL')
     
     

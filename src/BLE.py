@@ -39,7 +39,7 @@ class BLE(Protocol):
         value = (packet['btatt']['btatt.value'] if 'btatt.value' in packet['btatt'] else '-')
         req = (packet['btatt']['btatt.request_in_frame'] if 'btatt.request_in_frame' in packet['btatt'] else '-')
         info = packet['csv']['info']
-        description = 'Frame No. {}<br>Arrived at {}<br>Value: {}<br>Request in Frame {}<br>Info: {}'.format(num, time, value, req, info)
+        description = '<b>Frame No.</b> {}<br><b>Arrived at</b> {}<br><b>Value:</b> {}<br><b>Request in Frame:</b> {}<br><b>Info:</b> {}'.format(num, time, value, req, info)
         return description
     
     def gen_color_keys(self):
