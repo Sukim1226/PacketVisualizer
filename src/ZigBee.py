@@ -42,17 +42,21 @@ class ZB(Protocol):
             kelvin = 1000000 // int(color)
             description += '<br><b>Color</b>: {} ({}K)'.format(color, kelvin)
         
-        #if 'Attribute Field' in packet['zbee_zcl']:
+        # cmd.id: 0 // Read Attributes
+        # cmd.id: 1 // Read Attributes Response
+        # cmd.id: 10 // Report Attributes
+        # cmd.id: 11 // Default Response
+        #if packet['zbee_zcl']['zbee_zcl.cmd.id'] == '0':
         #   description += attribute_field(packet['zbee_zcl']['Attribute Field'])
-        #elif 'Status Record' in packet['zbee_zcl']:
-        #   description += status_field(packet['zbee_zcl']['Status Record'])
+        #elif packet['zbee_zcl']['zbee_zcl.cmd.id'] == '1':
+        #   description += status_record(packet['zbee_zcl']['Status Record'])
 
         return description
     
     def attribute_field(self, packet):        
         pass
 
-    def status_field(self, packet):
+    def status_record(self, packet):
         pass
 
     def gen_color_keys(self):
