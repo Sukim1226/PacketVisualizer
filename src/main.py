@@ -35,6 +35,5 @@ if __name__ == '__main__':
     # command: 'BLE', 'ZigBee', 'Wi-Fi', 'ALL'
     gui.show('ZigBee')
     gui.show('BLE')
-    gui.show('ALL')
     
     

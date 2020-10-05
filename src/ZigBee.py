@@ -9,15 +9,11 @@ class ZB(Protocol):
             'wpan:zbee_nwk:zbee_aps:zbee_zcl:zbee_zcl_general.level_control',
             'wpan:zbee_nwk:zbee_aps:zbee_zcl:zbee_zcl_lighting.color_ctrl',
             'wpan:zbee_nwk:zbee_aps:zbee_zcl:zbee_zcl_general.ota']
-        #self.opcodes = None
-        #self.handles = None
         self.zcl = []
         self.package = []
 
     def load_data(self, filelist):
         super(ZB, self).load_data(filelist[0:2])
-        #self.opcodes = IO.load_json(filelist[2])
-        #self.handles = IO.load_json(filelist[3])
 
     def gather(self):
         self.zcl = self.filter(self.protocol)
@@ -31,24 +27,32 @@ class ZB(Protocol):
         start = str(idx)
         finish = str(idx + 1)
         resource = packet['frame']['frame.protocols'].split(':')[-1]
-        description = packet['csv']['info']
+        description = self.gen_description(packet)
         return dict(Task=task, Start=start, Finish=finish, Resource=resource, Description=description)
 
     def gen_description(self, packet):
         num = packet['frame']['frame.number']
         time = packet['csv']['arrival']
         seq = packet['zbee_zcl']['zbee_zcl.cmd.tsn']
-        #color = packet['zbee_zcl']['Payload']['zbee_zcl_general.level_control.level']
-        #kelvin = 1000000 // int(color)
-        info = packet['csv']['info']
-        #description = 'Frame No. {}<br>Arrived at {}<br>Value: {}<br>Request in Frame {}<br>Info: {}'.format(num, time, value, req, info)
-        description = None
+        info = packet['csv']['info'].split(',')[0]
+        description = '<b>Frame No.</b> {}<br><b>Arrived at</b> {}<br><b>Seqence</b> {}<br><b>Info:</b> {}'.format(num, time, seq, info)
+        
+        if packet['frame']['frame.protocols'].split('.')[-1] == 'color_ctrl':
+            color = packet['zbee_zcl']['Payload']['zbee_zcl_lighting.color_control.color_temp']
+            kelvin = 1000000 // int(color)
+            description += '<br><b>Color</b>: {} ({}K)'.format(color, kelvin)
+        
+        #if 'Attribute Field' in packet['zbee_zcl']:
+        #   description += attribute_field(packet['zbee_zcl']['Attribute Field'])
+        #elif 'Status Record' in packet['zbee_zcl']:
+        #   description += status_field(packet['zbee_zcl']['Status Record'])
+
         return description
     
-    def on_off(self, packet):
+    def attribute_field(self, packet):        
         pass
 
-    def level(self, packet):
+    def status_field(self, packet):
         pass
 
     def gen_color_keys(self):

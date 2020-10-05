@@ -27,7 +27,7 @@ class GUI:
         fig = ff.create_gantt(df, colors=colors, index_col='Resource', show_colorbar=True, showgrid_x=True, showgrid_y=True, 
             height=600, width=None, group_tasks=True, show_hover_fill=True)
         fig.update_traces(hoverinfo='text')
-        fig.update_layout(title=title + ' Packet Visualizer', xaxis_title='Sequence', yaxis_title='Source', legend_title='Command')
+        fig.update_layout(title='<b>' + title + ' Packet Visualizer</b>', xaxis_title='<b>Sequence</b>', yaxis_title='<b>Source</b>', legend_title='<b>Command</b>')
         fig.update_layout(xaxis_rangemode='tozero', xaxis_type=None, xaxis_tickmode='linear', xaxis_showticklabels=False)      
         return fig
 
@@ -39,13 +39,14 @@ class GUI:
                 sub_fig.add_trace(trace, row=idx, col=1)
             idx += 1
         for i in range(1, len(self.figures) + 1):
-            sub_fig.update_xaxes(title_text='Sequence', tickmode='linear', showticklabels=False, rangemode='tozero', row=i, col=1)
-            sub_fig.update_yaxes(title_text='Source', showgrid=False, zeroline=False, showticklabels=False, row=i, col=1)
-        sub_fig.update_layout(title='Packet Visualizer', legend_title='Command')
+            sub_fig.update_xaxes(title_text='<b>Sequence</b>', tickmode='linear', showticklabels=False, rangemode='tozero', row=i, col=1)
+            sub_fig.update_yaxes(title_text='<b>Source</b>', showgrid=False, zeroline=False, showticklabels=False, row=i, col=1)
+        sub_fig.update_layout(title='<b>Packet Visualizer</b>', legend_title='<b>Command</b>')
         return sub_fig
 
     def show(self, cmd):
-        if cmd == 'ALL' and len(self.figures) > 1:
-            self.make_subplot().show()
-        else:
-            self.figures[cmd]['fig'].show()
+        #if cmd == 'ALL' and len(self.figures) > 1:
+        #    self.make_subplot().show()
+        #else:
+        #    self.figures[cmd]['fig'].show()
+        self.figures[cmd]['fig'].show()
