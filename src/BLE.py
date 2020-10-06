@@ -26,6 +26,7 @@ class BLE(Protocol):
         task = ('Phone' if packet['csv']['src'] == 'Master' else 'LED')
         start = str(idx)
         finish = str(idx + 1)
+        resouce = None
         for op in self.opcodes:
             if op['opcode'] == packet['btatt']['btatt.opcode']:
                 resource = op['message']

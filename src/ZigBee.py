@@ -1,5 +1,4 @@
 from Protocol import Protocol
-import FileIO as IO
 
 class ZB(Protocol):
     def __init__(self):

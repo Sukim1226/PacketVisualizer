@@ -1,0 +1,55 @@
+[
+    {
+        "flag": "0x00000001",
+        "message": "FIN"
+    },
+    {
+        "flag": "0x00000002",
+        "message": "SYN"
+    },
+    {
+        "flag": "0x00000004",
+        "message": "RST"
+    },
+    {
+        "flag": "0x00000008",
+        "message": "PSH"
+    },
+    {
+        "flag": "0x00000010",
+        "message": "ACK"
+    },
+    {
+        "flag": "0x00000011",
+        "message": "FIN, ACK"
+    },
+    {
+        "flag": "0x00000012",
+        "message": "SYN, ACK"
+    },
+    {
+        "flag": "0x00000014",
+        "message": "RST, ACK"
+    },
+    {
+        "flag": "0x00000018",
+        "message": "Application Data"
+    },
+    {
+        "flag": "0x00000020",
+        "message": "URG"
+    },
+    {
+        "flag": "0x00000040",
+        "message": "ECE"
+    },
+    {
+        "flag": "0x00000080",
+        "message": "CWR"
+    },
+    {
+        "flag": "0x00000100",
+        "message": "NS"
+    }
+
+]
