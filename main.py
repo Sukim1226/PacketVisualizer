@@ -47,6 +47,6 @@ if __name__ == '__main__':
     gui.show('ZigBee')
     gui.show('BLE')
     gui.show('WiFi')
-    gui.show('ALL')
+    #gui.show('ALL')
     
     
