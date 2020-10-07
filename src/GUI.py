@@ -17,6 +17,7 @@ class GUI:
     def add(self, protocol_instance):
         dic = {}
         dic['color_keys'] = self.match_color(protocol_instance.gen_color_keys())
+        dic['data'] = protocol_instance.package
         dic['fig'] = self.make_figure(protocol_instance.package, 
             dic['color_keys'], protocol_instance.category)
         self.figures[protocol_instance.category] = dic
@@ -45,8 +46,7 @@ class GUI:
         return sub_fig
 
     def show(self, cmd):
-        #if cmd == 'ALL' and len(self.figures) > 1:
-        #    self.make_subplot().show()
-        #else:
-        #    self.figures[cmd]['fig'].show()
-        self.figures[cmd]['fig'].show()
+        if cmd == 'ALL' and len(self.figures) > 1:
+            self.make_subplot().show()
+        else:
+            self.figures[cmd]['fig'].show()

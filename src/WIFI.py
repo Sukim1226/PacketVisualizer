@@ -1,5 +1,4 @@
-from Protocol import Protocol
-import FileIO as IO
+from .Protocol import Protocol
 
 class WF(Protocol):
     def __init__(self):
@@ -11,10 +10,10 @@ class WF(Protocol):
         self.tcp = []
         self.package = []
 
-    def load_data(self, filelist):
-        super(WF, self).load_data(filelist[0:2])
-        self.flags = IO.load_json(filelist[2])
-        self.ipmap = IO.load_json(filelist[3])
+    def load(self, filelist):
+        self.load_packets(filelist[0:2])
+        self.flags = self.load_data(filelist[2])
+        self.ipmap = self.load_data(filelist[3])
 
     def gather(self):
         self.tcp = self.filter(self.protocol)
@@ -42,18 +41,23 @@ class WF(Protocol):
     def gen_description(self, packet):
         num = packet['frame']['frame.number']
         time = packet['csv']['arrival']
+        src = self.match_name(packet['ip']['ip.src_host'])
+        srcIP = packet['ip']['ip.src']
         dst = self.match_name(packet['ip']['ip.dst_host'])
         dstIP = packet['ip']['ip.dst']
+        seq = packet['tcp']['tcp.seq']
+        nxtseq = packet['tcp']['tcp.nxtseq']
         info = packet['csv']['info']
-        description = '<b>Frame No.</b> {}<br><b>Arrived at</b> {}<br><b>Destination:</b> {} ({})<br><b>Info:</b> {}'.format(num, time, dst, dstIP, info)
+        description = '<b>Frame No.</b> {}<br><b>Arrived at</b> {}<br><b>Source:</b> {} ({})\t\t<b>Destination:</b> {} ({}) \
+        <br><b>Sequence:</b> {}\t\t<b>Next Sequence:</b> {}<br><b>Info:</b> {}'.format(num, time, src, srcIP, dst, dstIP, seq, nxtseq, info)
         return description
 
-    def match_name(self, s):
+    def match_name(self, ip_string):
         for ip in self.ipmap:
-            if ip['IP'] == s:
+            if ip['IP'] == ip_string:
                 return ip['Name']
 
-        l = s.split('.')
+        l = ip_string.split('.')
         if l[-2] == 'amazonaws':
             return 'Cloud'
         elif l[-2] == 'smartthings':

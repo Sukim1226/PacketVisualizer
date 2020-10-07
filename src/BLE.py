@@ -1,5 +1,4 @@
-from Protocol import Protocol
-import FileIO as IO
+from .Protocol import Protocol
 
 class BLE(Protocol):
     def __init__(self):
@@ -10,10 +9,10 @@ class BLE(Protocol):
         self.btatt = []
         self.package = []
 
-    def load_data(self, filelist):
-        super(BLE, self).load_data(filelist[0:2])
-        self.opcodes = IO.load_json(filelist[2])
-        self.handles = IO.load_json(filelist[3])
+    def load(self, filelist):
+        self.load_packets(filelist[0:2])
+        self.opcodes = self.load_data(filelist[2])
+        self.handles = self.load_data(filelist[3])
 
     def gather(self):
         self.btatt = self.filter(self.protocol)
@@ -37,10 +36,12 @@ class BLE(Protocol):
     def gen_description(self, packet):
         num = packet['frame']['frame.number']
         time = packet['csv']['arrival']
-        value = (packet['btatt']['btatt.value'] if 'btatt.value' in packet['btatt'] else '-')
-        req = (packet['btatt']['btatt.request_in_frame'] if 'btatt.request_in_frame' in packet['btatt'] else '-')
+        value = ('<br><b>Value:</b> ' + packet['btatt']['btatt.value'] 
+            if 'btatt.value' in packet['btatt'] else None)
+        req = ('<br><b>Request in Frame:</b> ' + packet['btatt']['btatt.request_in_frame'] 
+            if 'btatt.request_in_frame' in packet['btatt'] else '-')
         info = packet['csv']['info']
-        description = '<b>Frame No.</b> {}<br><b>Arrived at</b> {}<br><b>Value:</b> {}<br><b>Request in Frame:</b> {}<br><b>Info:</b> {}'.format(num, time, value, req, info)
+        description = '<b>Frame No.</b> {}<br><b>Arrived at</b> {}{}{}<br><b>Info:</b> {}'.format(num, time, value, req, info)
         return description
     
     def gen_color_keys(self):

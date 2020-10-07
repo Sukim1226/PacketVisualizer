@@ -5,19 +5,19 @@ from src.GUI import GUI
 
 def bluetooth(filelist):
     ble = BLE()
-    ble.load_data(filelist)
+    ble.load(filelist)
     ble.gather()
     return ble
     
 def zigbee(filelist):
     zb = ZB()
-    zb.load_data(filelist)
+    zb.load(filelist)
     zb.gather()
     return zb
 
 def wifi(filelist):
     wf = WF()
-    wf.load_data(filelist)
+    wf.load(filelist)
     wf.gather()
     return wf
     
@@ -34,17 +34,19 @@ wf_files = ['./packets/WiFi_packets/200820.json',
     './opcodes/WF_custom.json']
 
 if __name__ == '__main__':
-    #ble = bluetooth(ble_files)
-    #zb = zigbee(zb_files)
+    ble = bluetooth(ble_files)
+    zb = zigbee(zb_files)
     wf = wifi(wf_files)
+    
     gui = GUI()
-    #gui.add(ble)
-    #gui.add(zb)
+    gui.add(ble)
+    gui.add(zb)
     gui.add(wf)
 
     # command: 'BLE', 'ZigBee', 'WiFi', 'ALL'
-    #gui.show('ZigBee')
-    #gui.show('BLE')
+    gui.show('ZigBee')
+    gui.show('BLE')
     gui.show('WiFi')
+    gui.show('ALL')
     
     

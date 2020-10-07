@@ -1,4 +1,4 @@
-from Protocol import Protocol
+from .Protocol import Protocol
 
 class ZB(Protocol):
     def __init__(self):
@@ -11,8 +11,8 @@ class ZB(Protocol):
         self.zcl = []
         self.package = []
 
-    def load_data(self, filelist):
-        super(ZB, self).load_data(filelist[0:2])
+    def load(self, filelist):
+        super(ZB, self).load_packets(filelist[0:2])
 
     def gather(self):
         self.zcl = self.filter(self.protocol)

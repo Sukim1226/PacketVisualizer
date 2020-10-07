@@ -1,4 +1,5 @@
-import FileIO as IO
+from .FileIO import load_csv
+from .FileIO import load_json
 
 class Protocol(object):
     def __init__(self):
@@ -6,9 +7,12 @@ class Protocol(object):
         self.json_datas = None
         self.csv_datas = None
 
-    def load_data(self, filelist):
-        self.json_datas = IO.load_json(filelist[0])
-        self.csv_datas = IO.load_csv(filelist[1])
+    def load_packets(self, filelist):
+        self.json_datas = load_json(filelist[0])
+        self.csv_datas = load_csv(filelist[1])
+
+    def load_data(self, filename):
+        return load_json(filename)
 
     def filter(self, protocol):
         packets = []
