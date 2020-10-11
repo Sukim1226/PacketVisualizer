@@ -41,6 +41,7 @@ Python의 plotly 라이브러리를 이용하여, 패킷을 시각화 하였습�
 
 ------
 <br/>
+
 ### 2. Packet Visualize 프로그램
 <br/>
 
@@ -57,12 +58,13 @@ Python의 plotly 라이브러리를 이용하여, 패킷을 시각화 하였습�
   - 수현이가 써줭
 - src/Zigbee.py
   - 수현이가 써줭
-- src/____init____.py
+- src/init.py
 
 
 
 
 </br>
+
 #### Usage
 
 ```python
