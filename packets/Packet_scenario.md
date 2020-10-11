@@ -46,6 +46,12 @@
 #### 0920-3
 1. Color Temperature Update 3번
 
+#### 0920-4
+1. Bright Preset 3번
+2. Color Temperature Preset 5번
+3. On
+4. Off
+
 
 #### BLE Handle id
 1. On/Off: **0x002d**
