@@ -6,7 +6,9 @@
 
 
 
-##### - Packet 수집 방식
+
+
+#### - Packet 수집 방식
 
 스마트폰의 Smart things app을 통해 스마트 LED를 제어하고, 그 과정에서 발생하는 패킷들을 수집합니다.
 
@@ -24,9 +26,9 @@ https://docs.google.com/document/d/1SUztSTuu6S8oWnLE1XN9kYI41vMQ5j6C6ZSl63t9p3I/
 
 
 
-##### - Packet Visualize 방식
+#### - Packet Visualize 방식
 
-<img width="1424" alt="스크린샷 2020-10-11 오후 3 54 46" src="https://user-images.githubusercontent.com/5088280/95672433-b48fd300-0bdb-11eb-94d6-20b9be86864a.png">
+![스크린샷 2020-10-11 오후 3.54.46](/Users/seoyulim/Desktop/스크린샷 2020-10-11 오후 3.54.46.png)
 
 Python의 plotly 라이브러리를 이용하여, 패킷을 시각화 하였습니다. 수집한 패킷 파일은 WireShark에서 csv와 json 파일로 export 후에 불러와서 csv 파일을 통해 packet info를 불러오고, json 파일을 통해 packet 내부 value 값들을 불러왔습니다.
 
@@ -41,10 +43,28 @@ Python의 plotly 라이브러리를 이용하여, 패킷을 시각화 하였습�
 
 
 - main.py
-  - 
+  - 수현이가 써줭
 - src/WIFI.py
+  - 수현이가 써줭
 - src/BLE.py
+  - 수현이가 써줭
 - src/Zigbee.py
+  - 수현이가 써줭
 - src/FileIO.py
+  - 수현이가 써줭
 - src/Zigbee.py
-- src/__init__.py
+  - 수현이가 써줭
+- src/____init____.py
+
+
+
+
+
+#### Usage
+
+```python
+python main.py [BLE packet 파일 이름] [ZIGBEE packet 파일 이름] [WIFI packet 파일 이름]
+# ex) python main.py 0920_BLE_Yurim 0928_zigbee1 0928_WiFi3_filtered
+```
+
+위의 명령어를 실행하면 브라우저에 각각의 패킷이 시각화된 화면이 3개의 탭으로 나타남.
