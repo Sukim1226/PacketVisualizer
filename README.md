@@ -1,6 +1,6 @@
 # 졸업 프로젝트
 
-### 1. 졸업 프로젝트 개요
+## 1. 졸업 프로젝트 개요
 
 *IoT 기기를 제어할때 네트워크 통신 상의 무결성을 검증하자. 이를 위해 각 통신 방식 별로 패킷을 수집하고, 이를 시각화 할 수 있는 프로그램을 제작해 패킷을 분석 해보자.*
 
@@ -42,7 +42,9 @@ Python의 plotly 라이브러리를 이용하여, 패킷을 시각화 하였습�
 ------
 <br/>
 
-### 2. Packet Visualize 프로그램
+## 2. Packet Visualize 프로그램
+
+## 
 
 + src/FileIO.py
   - json 파일과 csv 파일을 load/store 한다.<br/><br/>
@@ -75,7 +77,7 @@ Python의 plotly 라이브러리를 이용하여, 패킷을 시각화 하였습�
 + main.py
   - Wi-Fi, ZigBee, BLE 파일명을 받아 instance를 생성하고 Packet Timeline Chart를 출력한다.<br/>
 
-#### Usage
+## Usage
 
 ```python
 python main.py [BLE packet 파일 이름] [ZIGBEE packet 파일 이름] [WIFI packet 파일 이름]
