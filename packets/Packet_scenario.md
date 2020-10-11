@@ -33,10 +33,21 @@
 
 ## BLE
 #### 0920-PRESET10
-* Brightness 10% Preset 6번 누름
+1. Brightness 10% Preset 6번 누름
 
-<br>
+#### 0920-1
+1. BLE Advertising 과정 패킷 수집
+
+#### 0920-2
+1. Off
+2. Brightness Update 3번
+3. Color Temperature Update 1번
+
+#### 0920-3
+1. Color Temperature Update 3번
+
+
 #### BLE Handle id
-* On/Off: **0x002d**
-* Brightness Preset & Progress Bar: **0x002f**
-* Color Temperature Preset & Progress Bar: **0x0031**
+1. On/Off: **0x002d**
+2. Brightness Preset & Progress Bar: **0x002f**
+3. Color Temperature Preset & Progress Bar: **0x0031**
