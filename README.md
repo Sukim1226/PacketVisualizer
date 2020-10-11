@@ -28,7 +28,9 @@ https://docs.google.com/document/d/1SUztSTuu6S8oWnLE1XN9kYI41vMQ5j6C6ZSl63t9p3I/
 
 #### - Packet Visualize 방식
 
-![스크린샷 2020-10-11 오후 3.54.46](/Users/seoyulim/Desktop/스크린샷 2020-10-11 오후 3.54.46.png)
+<img width="1437" alt="스크린샷 2020-10-11 오후 4 24 52" src="https://user-images.githubusercontent.com/5088280/95672777-895ab300-0bde-11eb-9d28-0548efe18143.png">
+
+
 
 Python의 plotly 라이브러리를 이용하여, 패킷을 시각화 하였습니다. 수집한 패킷 파일은 WireShark에서 csv와 json 파일로 export 후에 불러와서 csv 파일을 통해 packet info를 불러오고, json 파일을 통해 packet 내부 value 값들을 불러왔습니다.
 
@@ -68,3 +70,7 @@ python main.py [BLE packet 파일 이름] [ZIGBEE packet 파일 이름] [WIFI pa
 ```
 
 위의 명령어를 실행하면 브라우저에 각각의 패킷이 시각화된 화면이 3개의 탭으로 나타남.
+
+
+
+<img width="1434" alt="스크린샷 2020-10-11 오후 4 24 24" src="https://user-images.githubusercontent.com/5088280/95672779-8a8be000-0bde-11eb-92f9-daf51d5f6a9b.png">
