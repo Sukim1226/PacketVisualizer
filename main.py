@@ -8,7 +8,7 @@ def bluetooth(filelist):
     ble.load(filelist)
     ble.gather()
     return ble
-    
+
 def zigbee(filelist):
     zb = ZB()
     zb.load(filelist)
@@ -20,21 +20,26 @@ def wifi(filelist):
     wf.load(filelist)
     wf.gather()
     return wf
-    
-ble_files = ['./packets/BLE_packets/0920_BLE_Yurim.json', 
-    './packets/BLE_packets/0920_BLE_Yurim.csv']
 
-zb_files = ['./packets/ZB_packets/0928_zigbee1.json', 
-    './packets/ZB_packets/0928_zigbee1.csv']
+ble_files = []
 
-wf_files = ['./packets/WiFi_packets/200820.json',
-    './packets/WiFi_packets/200820.csv']
+zb_files = []
+
+wf_files = []
 
 if __name__ == '__main__':
+    ble_files.append('./packets/BLE_packets/' + argv[1] + '.json')
+    ble_files.append('./packets/BLE_packets/' + argv[1] + '.csv')
     ble = bluetooth(ble_files)
+
+    zb_files.append('./packets/ZB_packets/' + argv[2] + '.json')
+    zb_files.append('./packets/ZB_packets/' + argv[2] + '.csv')
     zb = zigbee(zb_files)
+
+    wf_files.append('./packets/WiFi_packets/' + argv[3] + '.json')
+    wf_files.append('./packets/WiFi_packets/' + argv[3] + '.csv')
     wf = wifi(wf_files)
-    
+
     gui = GUI()
     gui.add(ble)
     gui.add(zb)
@@ -45,5 +50,3 @@ if __name__ == '__main__':
     gui.show('BLE')
     gui.show('WiFi')
     #gui.show('ALL')
-    
-    
