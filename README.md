@@ -43,7 +43,6 @@ Python의 plotly 라이브러리를 이용하여, 패킷을 시각화 하였습�
 <br/>
 
 ### 2. Packet Visualize 프로그램
-<br/>
 
 + src/FileIO.py
   - json 파일과 csv 파일을 load/store 한다.<br/>
@@ -53,14 +52,14 @@ Python의 plotly 라이브러리를 이용하여, 패킷을 시각화 하였습�
   - def pack(self): GUI class에 건낼 데이터 패키지를 생성한다.
   - 아래는 Protocol의 child class이다.
   >+ src/WIFI.py : **class WF**
-  >  - Description: Frame No. / Time / Src / Dst / Sequence / Next Sequence / Info
-  >  - Color_key: TCP flag 값으로 색상 분류
+  >   - Description: Frame No. / Time / Src / Dst / Sequence / Next Sequence / Info
+  >   - Color_key: TCP flag 값으로 색상 분류
   >+ src/ZigBee.py : **class ZB**
-  >  - Description: Frame No. / Time / Sequence / Info / (Color)
-  >  - Color_key: zbee_zcl 값으로 색상 분류 
+  >   - Description: Frame No. / Time / Sequence / Info / (Color)
+  >   - Color_key: zbee_zcl 값으로 색상 분류 
   >+ src/BLE.py : **class BLE**
-  >  - Description: Frame No. / Time / (Value) / (Request in Frame) / Info
-  >  - Color_key: btatt.opcode 값으로 색상 분류
+  >   - Description: Frame No. / Time / (Value) / (Request in Frame) / Info
+  >   - Color_key: btatt.opcode 값으로 색상 분류
 
 <br/>
 
