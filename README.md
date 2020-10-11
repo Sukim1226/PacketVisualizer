@@ -11,7 +11,7 @@
 
 스마트폰의 Smart things app을 통해 스마트 LED를 제어하고, 그 과정에서 발생하는 패킷들을 수집합니다.
 
-패킷들은 Ble, Wifi, Zigbee 스마트 LED를 제어하는 세가지 방식에 따라 각각 수집하였습니다.
+패킷들은 Ble, Wifi, Zigbee 스마트 LED와 통신하는 세가지 방식에 따라 각각 수집하였습니다.
 
 Ble와 Zigbee 통신은 Nordic Sniffer를 이용하여 수집하였고
 
