@@ -22,16 +22,13 @@ def wifi(filelist):
     return wf
     
 ble_files = ['./packets/BLE_packets/0920_BLE_Yurim.json', 
-    './packets/BLE_packets/0920_BLE_Yurim.csv',
-    './opcodes/BLE_opcode.json']
+    './packets/BLE_packets/0920_BLE_Yurim.csv']
 
 zb_files = ['./packets/ZB_packets/0928_zigbee1.json', 
     './packets/ZB_packets/0928_zigbee1.csv']
 
 wf_files = ['./packets/WiFi_packets/200820.json',
-    './packets/WiFi_packets/200820.csv', 
-    './opcodes/WF_flag.json',
-    './opcodes/WF_custom.json']
+    './packets/WiFi_packets/200820.csv']
 
 if __name__ == '__main__':
     ble = bluetooth(ble_files)

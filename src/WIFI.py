@@ -11,9 +11,9 @@ class WF(Protocol):
         self.package = []
 
     def load(self, filelist):
-        self.load_packets(filelist[0:2])
-        self.flags = self.load_data(filelist[2])
-        self.ipmap = self.load_data(filelist[3])
+        self.load_packets(filelist)
+        self.flags = self.load_data('./opcodes/WF_flag.json')
+        self.ipmap = self.load_data('./opcodes/WF_custom.json')
 
     def gather(self):
         self.tcp = self.filter(self.protocol)

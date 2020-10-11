@@ -12,7 +12,7 @@ class ZB(Protocol):
         self.package = []
 
     def load(self, filelist):
-        super(ZB, self).load_packets(filelist[0:2])
+        super(ZB, self).load_packets(filelist)
 
     def gather(self):
         self.zcl = self.filter(self.protocol)

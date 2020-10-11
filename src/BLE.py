@@ -9,8 +9,8 @@ class BLE(Protocol):
         self.package = []
 
     def load(self, filelist):
-        self.load_packets(filelist[0:2])
-        self.opcodes = self.load_data(filelist[2])
+        self.load_packets(filelist)
+        self.opcodes = self.load_data('./opcodes/BLE_opcode.json')
 
     def gather(self):
         self.btatt = self.filter(self.protocol)
