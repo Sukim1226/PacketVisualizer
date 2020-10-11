@@ -7,7 +7,6 @@
 <br/>
 
 
-
 #### - Packet 수집 방식
 
 스마트폰의 Smart things app을 통해 스마트 LED를 제어하고, 그 과정에서 발생하는 패킷들을 수집합니다.
@@ -44,14 +43,14 @@ Python의 plotly 라이브러리를 이용하여, 패킷을 시각화 하였습�
 
 ## 2. Packet Visualize 프로그램
 
-## File Description
+#### - File Description
 
 + src/FileIO.py
   - json 파일과 csv 파일을 load/store 한다.<br/><br/>
   
 + src/Protocol.py 
-  - def filter(self, protocol): 불러온 파일의 데이터를 프로토콜에 따라 필터링 한다.
-  - def pack(self): GUI class에 건낼 데이터 패키지를 생성한다.
+  - ```def filter(self, protocol)```: 불러온 파일의 데이터를 프로토콜에 따라 필터링 한다.
+  - ```def pack(self)```: GUI class에 건낼 데이터 패키지를 생성한다.
   - 아래는 Protocol의 child class이다.
   >+ src/WIFI.py : **class WF**
   >   - Description: Frame No. / Time / Src / Dst / Sequence / Next Sequence / Info
@@ -66,18 +65,18 @@ Python의 plotly 라이브러리를 이용하여, 패킷을 시각화 하였습�
 <br/>
 
 + src/GUI.py
-  - def add(self, protocol_instance): Protocol class의 instance를 받아 정보를 저장한다.
-  - def match_color(self, color_keys): color_keys dictionary와 랜덤 RGB 값을 매칭한다.
-  - def make_figure(self, datas, color_keys, title): 하나의 Gantt chart figure를 생성한다.
-  - def make_subplot(self): 여러 Gantt chart를 담는 subplot을 생성한다.
-  - def show(self, cmd): cmd는 'WiFi', 'ZigBee', 'BLE' 중 하나이며 해당 protocol의 Gantt chart가 새 탭에 출력된다.
+  - ```def add(self, protocol_instance)```: Protocol class의 instance를 받아 정보를 저장한다.
+  - ```def match_color(self, color_keys)```: color_keys dictionary와 랜덤 RGB 값을 매칭한다.
+  - ```def make_figure(self, datas, color_keys, title)```: 하나의 Gantt chart figure를 생성한다.
+  - ```def make_subplot(self)```: 여러 Gantt chart를 담는 subplot을 생성한다.
+  - ```def show(self, cmd)```: cmd는 'WiFi', 'ZigBee', 'BLE' 중 하나이며 해당 protocol의 Gantt chart가 새 탭에 출력된다.
 
 <br/>
 
 + main.py
   - Wi-Fi, ZigBee, BLE 파일명을 받아 instance를 생성하고 Packet Timeline Chart를 출력한다.<br/>
 
-## Usage
+#### - Usage
 
 ```python
 python main.py [BLE packet 파일 이름] [ZIGBEE packet 파일 이름] [WIFI packet 파일 이름]
