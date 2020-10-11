@@ -23,7 +23,7 @@ def wifi(filelist):
     
 ble_files = ['./packets/BLE_packets/0920_BLE_Yurim.json', 
     './packets/BLE_packets/0920_BLE_Yurim.csv',
-    './opcodes/BLE_opcode.json', './opcodes/BLE_handle.json']
+    './opcodes/BLE_opcode.json']
 
 zb_files = ['./packets/ZB_packets/0928_zigbee1.json', 
     './packets/ZB_packets/0928_zigbee1.csv']

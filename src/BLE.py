@@ -5,14 +5,12 @@ class BLE(Protocol):
         self.category = 'BLE'
         self.protocol = ['nordic_ble:btle:btl2cap:btatt']
         self.opcodes = None
-        self.handles = None
         self.btatt = []
         self.package = []
 
     def load(self, filelist):
         self.load_packets(filelist[0:2])
         self.opcodes = self.load_data(filelist[2])
-        self.handles = self.load_data(filelist[3])
 
     def gather(self):
         self.btatt = self.filter(self.protocol)
