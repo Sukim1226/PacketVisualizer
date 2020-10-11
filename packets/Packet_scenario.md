@@ -32,6 +32,10 @@
 <br>
 
 ## BLE
+#### 0920-PRESET10
+* Brightness 10% Preset 6번 누름
+
+<br>
 #### BLE Handle id
 * On/Off: **0x002d**
 * Brightness Preset & Progress Bar: **0x002f**
