@@ -1,6 +1,6 @@
 # 졸업 프로젝트
 
-## 1. 졸업 프로젝트 개요
+### 1. 졸업 프로젝트 개요
 
 *IoT 기기를 제어할때 네트워크 통신 상의 무결성을 검증하자. 이를 위해 각 통신 방식 별로 패킷을 수집하고, 이를 시각화 할 수 있는 프로그램을 제작해 패킷을 분석 해보자.*
 
@@ -28,7 +28,7 @@ https://docs.google.com/document/d/1SUztSTuu6S8oWnLE1XN9kYI41vMQ5j6C6ZSl63t9p3I/
 
 #### - Packet Visualize 방식
 
-<img width="1437" alt="스크린샷 2020-10-11 오후 4 24 52" src="https://user-images.githubusercontent.com/5088280/95672777-895ab300-0bde-11eb-9d28-0548efe18143.png">
+<img width="1437" alt="스크린샷 2020-10-11 오후 8 56 51" src="https://user-images.githubusercontent.com/5088280/95677985-680cbd80-0c04-11eb-8e5f-2bc0eb1369de.png">
 
 
 
@@ -36,31 +36,35 @@ Python의 plotly 라이브러리를 이용하여, 패킷을 시각화 하였습�
 
 패킷의 색깔을 통해 종류를 구분했고, 자세한 정보를 보고 싶은 packet은 마우스를 hover 시키면 나오는 박스를 통해 확인할 수 있습니다.
 
-
-
-------
 <br/>
 
-## 2. Packet Visualize 프로그램
+------
+
+<br/>
+
+### 2. Packet Visualize 프로그램
 
 #### - File Description
 
 + src/FileIO.py
+
   - json 파일과 csv 파일을 load/store 한다.<br/><br/>
-  
+
 + src/Protocol.py 
+
   - ```def filter(self, protocol)```: 불러온 파일의 데이터를 프로토콜에 따라 필터링 한다.
   - ```def pack(self)```: GUI class에 건낼 데이터 패키지를 생성한다.
   - 아래는 Protocol의 child class이다.
+
   >+ src/WIFI.py : **class WF**
-  >   - Description: Frame No. / Time / Src / Dst / Sequence / Next Sequence / Info
-  >   - Color_key: TCP flag 값으로 색상 분류
+  >  - Description: Frame No. / Time / Src / Dst / Sequence / Next Sequence / Info
+  >  - Color_key: TCP flag 값으로 색상 분류
   >+ src/ZigBee.py : **class ZB**
-  >   - Description: Frame No. / Time / Sequence / Info / (Color)
-  >   - Color_key: zbee_zcl 값으로 색상 분류 
+  >  - Description: Frame No. / Time / Sequence / Info / (Color)
+  >  - Color_key: zbee_zcl 값으로 색상 분류 
   >+ src/BLE.py : **class BLE**
-  >   - Description: Frame No. / Time / (Value) / (Request in Frame) / Info
-  >   - Color_key: btatt.opcode 값으로 색상 분류
+  >  - Description: Frame No. / Time / (Value) / (Request in Frame) / Info
+  >  - Color_key: btatt.opcode 값으로 색상 분류
 
 <br/>
 
@@ -89,4 +93,4 @@ python main.py [BLE packet 파일 이름] [ZIGBEE packet 파일 이름] [WIFI pa
 
 
 
-<img width="1434" alt="스크린샷 2020-10-11 오후 4 24 24" src="https://user-images.githubusercontent.com/5088280/95672779-8a8be000-0bde-11eb-92f9-daf51d5f6a9b.png">
+<img width="1434" alt="스크린샷 2020-10-11 오후 4 24 24" src="https://user-images.githubusercontent.com/5088280/95672779-8a8be000-0bde-11eb-92f9-daf51d5f6a9b.png">
