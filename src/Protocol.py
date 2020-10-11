@@ -19,17 +19,20 @@ class Protocol(object):
         for j in self.json_datas:
             packet = j['_source']['layers']
             if packet['frame']['frame.protocols'] in protocol:
-                c = self.get_csv(int(packet['frame']['frame.number']))
+                c = self.get_csv(packet['frame']['frame.number'])
                 packet['csv'] = c
                 packets.append(packet)
         return packets
 
     def get_csv(self, frame_num):
         dic = {}
-        dic['src'] = self.csv_datas[frame_num - 1]['Source'].split('_')[0]
-        dic['arrival'] = self.csv_datas[frame_num - 1]['Time']
-        #dic['dst'] = self.csv_datas[frame_num - 1]['Destination']
-        dic['info'] = self.csv_datas[frame_num - 1]['Info']
+        for c in self.csv_datas:
+            if c['No.'] == frame_num:
+                dic['src'] = c['Source'].split('_')[0]
+                dic['arrival'] = c['Time']
+                #dic['dst'] = c['Destination']
+                dic['info'] = c['Info']
+                break
         return dic
 
     def gather(self):

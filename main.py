@@ -1,3 +1,4 @@
+import sys
 from src.WIFI import WF
 from src.ZigBee import ZB
 from src.BLE import BLE
@@ -28,16 +29,16 @@ zb_files = []
 wf_files = []
 
 if __name__ == '__main__':
-    ble_files.append('./packets/BLE_packets/' + argv[1] + '.json')
-    ble_files.append('./packets/BLE_packets/' + argv[1] + '.csv')
+    ble_files.append('./packets/BLE_packets/' + sys.argv[1] + '.json')
+    ble_files.append('./packets/BLE_packets/' + sys.argv[1] + '.csv')
     ble = bluetooth(ble_files)
 
-    zb_files.append('./packets/ZB_packets/' + argv[2] + '.json')
-    zb_files.append('./packets/ZB_packets/' + argv[2] + '.csv')
+    zb_files.append('./packets/ZB_packets/' + sys.argv[2] + '.json')
+    zb_files.append('./packets/ZB_packets/' + sys.argv[2] + '.csv')
     zb = zigbee(zb_files)
 
-    wf_files.append('./packets/WiFi_packets/' + argv[3] + '.json')
-    wf_files.append('./packets/WiFi_packets/' + argv[3] + '.csv')
+    wf_files.append('./packets/WiFi_packets/' + sys.argv[3] + '.json')
+    wf_files.append('./packets/WiFi_packets/' + sys.argv[3] + '.csv')
     wf = wifi(wf_files)
 
     gui = GUI()

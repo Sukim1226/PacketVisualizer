@@ -10,8 +10,10 @@ def load_csv(filename):
     return data
 
 def load_json(filename):
-    f = open(filename)
-    #f = open(filename, encoding='UTF8')
+    #print(filename)
+    #f = open(filename)
+    #f = open(filename, encoding='unicode_escape')
+    f = open(filename, encoding='UTF8')
     data = json.load(f)
     f.close()
     return data
