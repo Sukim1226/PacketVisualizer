@@ -46,8 +46,8 @@ Python의 plotly 라이브러리를 이용하여, 패킷을 시각화 하였습�
 <br/>
 
 + src/FileIO.py
-  - json 파일과 csv 파일을 load/store 한다.
-<br/>
+  - json 파일과 csv 파일을 load/store 한다.<br/>
+  
 + src/Protocol.py 
   - def filter(self, protocol): 불러온 파일의 데이터를 프로토콜에 따라 필터링 한다.
   - def pack(self): GUI class에 건낼 데이터 패키지를 생성한다.
@@ -61,17 +61,20 @@ Python의 plotly 라이브러리를 이용하여, 패킷을 시각화 하였습�
   >+ src/BLE.py : **class BLE**
   >  - Description: Frame No. / Time / (Value) / (Request in Frame) / Info
   >  - Color_key: btatt.opcode 값으로 색상 분류
+
 <br/>
+
 + src/GUI.py
   - def add(self, protocol_instance): Protocol class의 instance를 받아 정보를 저장한다.
   - def match_color(self, color_keys): color_keys dictionary와 랜덤 RGB 값을 매칭한다.
   - def make_figure(self, datas, color_keys, title): 하나의 Gantt chart figure를 생성한다.
   - def make_subplot(self): 여러 Gantt chart를 담는 subplot을 생성한다.
   - def show(self, cmd): cmd는 'WiFi', 'ZigBee', 'BLE' 중 하나이며 해당 protocol의 Gantt chart가 새 탭에 출력된다.
+
 <br/>
+
 + main.py
-  - Wi-Fi, ZigBee, BLE 파일명을 받아 instance를 생성하고 Packet Timeline Chart를 출력한다.
-<br/>
+  - Wi-Fi, ZigBee, BLE 파일명을 받아 instance를 생성하고 Packet Timeline Chart를 출력한다.<br/>
 
 #### Usage
 
