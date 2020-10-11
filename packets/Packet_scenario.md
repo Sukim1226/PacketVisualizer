@@ -32,7 +32,7 @@
 <br>
 
 ## BLE
-#### BLE Handle
+#### BLE Handle id
 * On/Off: **0x002d**
 * Brightness Preset & Progress Bar: **0x002f**
 * Color Temperature Preset & Progress Bar: **0x0031**
