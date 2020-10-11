@@ -86,7 +86,7 @@ Python의 plotly 라이브러리를 이용하여, 패킷을 시각화 하였습�
 
 ```python
 python main.py [BLE packet 파일 이름] [ZIGBEE packet 파일 이름] [WIFI packet 파일 이름]
-# ex) python main.py 0920_BLE_Yurim 0928_zigbee1 0928_WiFi3_filtered
+# ex) python main.py 0920_BLE1 0928_zigbee1 0928_WiFi3_filtered1
 ```
 
 위의 명령어를 실행하면 브라우저에 각각의 패킷이 시각화된 화면이 3개의 탭으로 나타남.
